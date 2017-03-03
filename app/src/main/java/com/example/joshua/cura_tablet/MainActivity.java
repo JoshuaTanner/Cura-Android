@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.speech.tts.TextToSpeech;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     TextView helloText;
 
     ImageButton speechButton;
+
+    TextToSpeech TTS;
 
     private final int REQ_CODE_SPEECH_INPUT = 100;
 
@@ -70,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TTS = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int i) {
+                if(i != TextToSpeech.ERROR){
+                    TTS.setLanguage(Locale.UK);
+                }
+            }
+        });
+
 
     }
 
@@ -107,6 +119,19 @@ public class MainActivity extends AppCompatActivity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     helloText.setText(result.get(0));
+
+                    Log.i("LOG", helloText.toString());
+
+                    if(helloText.getText() == "who is my son")
+                    {
+                        Identify();
+                    }
+                    else
+                    {
+                        String toSpeak = "I don't understand";
+                        Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
+                        TTS.speak(toSpeak,TextToSpeech.QUEUE_FLUSH, null);
+                    }
                 }
                 break;
             }
@@ -116,10 +141,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void Schedule() {
         Log.i("LOG", "Accessing schedule");
+
+        String toSpeak = "Head to the dining room in 15 minutes for lunch";
+        Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
+        TTS.speak(toSpeak,TextToSpeech.QUEUE_FLUSH, null);
     }
 
     public void Identify() {
         Log.i("LOG", "Accessing identify");
+
+        String toSpeak = "James Tanner is your 36 year old son. Here are your memories";
+        Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
+        TTS.speak(toSpeak,TextToSpeech.QUEUE_FLUSH, null);
+
     }
 
 }
