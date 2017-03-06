@@ -95,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
                 getString(R.string.speech_prompt));
+
+        TextToSpeech("How can I help you?");
+
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
@@ -122,15 +125,17 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.i("LOG", helloText.toString());
 
-                    if(helloText.getText() == "who is my son")
+                    if(helloText.getText().equals("who is my son"))
                     {
                         Identify();
                     }
+                    else if(helloText.getText().equals("what is next"))
+                    {
+                        Schedule();
+                    }
                     else
                     {
-                        String toSpeak = "I don't understand";
-                        Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
-                        TTS.speak(toSpeak,TextToSpeech.QUEUE_FLUSH, null);
+                        TextToSpeech("I don't understand");
                     }
                 }
                 break;
@@ -139,21 +144,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void Schedule() {
-        Log.i("LOG", "Accessing schedule");
-
-        String toSpeak = "Head to the dining room in 15 minutes for lunch";
+    public void TextToSpeech(String toSpeak){
         Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
         TTS.speak(toSpeak,TextToSpeech.QUEUE_FLUSH, null);
     }
 
+
+    public void Schedule() {
+        Log.i("LOG", "Accessing schedule");
+        TextToSpeech("Head to the dining room in 15 minutes for lunch");
+    }
+
     public void Identify() {
         Log.i("LOG", "Accessing identify");
-
-        String toSpeak = "James Tanner is your 36 year old son. Here are your memories";
-        Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
-        TTS.speak(toSpeak,TextToSpeech.QUEUE_FLUSH, null);
-
+        TextToSpeech("James Tanner is your 36 year old son. Here are your memories");
     }
 
 }
