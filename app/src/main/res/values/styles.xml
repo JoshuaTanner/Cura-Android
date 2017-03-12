@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CuraTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="CuraTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
