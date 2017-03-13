@@ -11,70 +11,46 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.joshua.cura_tablet.MainActivity">
 
-    <Button
-        android:text="What's next?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Schedule"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <ImageButton
         android:id="@+id/MicButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/mic_small"
-        android:elevation="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        app:srcCompat="@drawable/cura_button1"
+        android:elevation="0dp"
+        style="@android:style/Widget.ImageButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Identify"
-        android:elevation="0dp"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-        android:text="Identify"
-        android:layout_above="@+id/Schedule"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/Schedule"
-        android:layout_alignEnd="@+id/Schedule" />
+        app:srcCompat="@drawable/schedule_button1"
+        android:id="@+id/ScheduleButton"
+        style="@android:style/Widget.ImageButton"
+        android:layout_marginRight="41dp"
+        android:layout_marginEnd="41dp"
+        android:layout_alignTop="@+id/FamilyButton"
+        android:layout_toLeftOf="@+id/MicButton"
+        android:layout_toStartOf="@+id/MicButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/family_button1"
+        android:id="@+id/FamilyButton"
+        style="@android:style/Widget.ImageButton"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/MicButton"
+        android:layout_toEndOf="@+id/MicButton"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp" />
 
     <TextView
         android:id="@+id/Hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Say hello Cura!"
-        android:layout_marginRight="155dp"
-        android:layout_marginEnd="155dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Family Tree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/Hello"
-        android:layout_alignStart="@+id/Hello"
-        android:layout_marginLeft="63dp"
-        android:layout_marginStart="63dp"
-        android:id="@+id/family_text" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/family"
-        android:id="@+id/imageButton"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

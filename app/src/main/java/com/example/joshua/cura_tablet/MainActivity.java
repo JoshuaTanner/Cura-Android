@@ -24,8 +24,8 @@ import android.speech.tts.TextToSpeech;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button scheduleButton;
-    Button identifyButton;
+    ImageButton scheduleButton;
+    ImageButton identifyButton;
 
     TextView helloText;
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public void Init() {
 
         //Setting up schedule on click
-        scheduleButton = (Button) findViewById(R.id.Schedule);
+        scheduleButton = (ImageButton) findViewById(R.id.ScheduleButton);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Setting up identify on click
-        identifyButton = (Button) findViewById(R.id.Identify);
+        identifyButton = (ImageButton) findViewById(R.id.FamilyButton);
         identifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
                 getString(R.string.speech_prompt));
 
-        TextToSpeech("How can I help you?");
+        //TextToSpeech("How can I help you?");
 
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
