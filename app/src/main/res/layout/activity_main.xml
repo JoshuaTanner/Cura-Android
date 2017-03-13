@@ -16,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Schedule"
+        android:background="@android:color/transparent"
         android:layout_above="@+id/MicButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="13dp"
@@ -24,6 +25,7 @@
 
     <ImageButton
         android:id="@+id/MicButton"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/mic_small"
@@ -35,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Identify"
+        android:background="@android:color/transparent"
         android:elevation="0dp"
         android:layout_marginTop="12dp"
         style="@style/Widget.AppCompat.Button.Colored"

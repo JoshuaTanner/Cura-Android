@@ -3,4 +3,5 @@
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#1976d2</color>
     <color name="colorAccent">#ff5aba</color>
+    <color name="Cura_font_DarkGrey">#363636</color>
 </resources>

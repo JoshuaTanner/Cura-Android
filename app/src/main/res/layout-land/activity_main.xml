@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:background="@drawable/bg_home"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,37 +14,41 @@
 
     <ImageButton
         android:id="@+id/MicButton"
+        android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/cura_button1"
         android:elevation="0dp"
         style="@android:style/Widget.ImageButton"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/schedule_button1"
+        android:background="@android:color/transparent"
         android:id="@+id/ScheduleButton"
         style="@android:style/Widget.ImageButton"
-        android:layout_marginRight="41dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp"
         android:layout_alignTop="@+id/FamilyButton"
-        android:layout_toLeftOf="@+id/MicButton"
-        android:layout_toStartOf="@+id/MicButton" />
+        android:layout_toLeftOf="@+id/textClock"
+        android:layout_toStartOf="@+id/textClock" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/family_button1"
+        android:background="@android:color/transparent"
         android:id="@+id/FamilyButton"
         style="@android:style/Widget.ImageButton"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/MicButton"
-        android:layout_toEndOf="@+id/MicButton"
         android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="51dp"
+        android:layout_above="@+id/textDate"
+        android:layout_toRightOf="@+id/textClock"
+        android:layout_toEndOf="@+id/textClock" />
 
     <TextView
         android:id="@+id/Hello"
@@ -52,5 +57,35 @@
         android:text="Say hello Cura!"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:format12Hour="HH:mm"
+        android:format24Hour="HH:mm"
+        android:textColor="@color/Cura_font_DarkGrey"
+        android:textSize="160sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextClock
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="dd/MMM/yyyy"
+        android:format24Hour="dd/MMM/yyyy"
+        android:textAlignment="center"
+        android:textColor="@color/Cura_font_DarkGrey"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textClock"
+        android:layout_alignStart="@+id/textClock"
+        android:layout_alignRight="@+id/textClock"
+        android:layout_alignEnd="@+id/textClock" />
 
 </RelativeLayout>

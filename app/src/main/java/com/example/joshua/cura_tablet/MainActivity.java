@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
+import java.text.DateFormat;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -18,9 +20,14 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.Menu;
 import android.widget.ImageButton;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.speech.tts.TextToSpeech;
+import android.graphics.Typeface;
+
+import org.w3c.dom.Text;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
     ImageButton speechButton;
 
     TextToSpeech TTS;
+    Typeface typeFace;
+
+    TextClock txtClock;
+    TextClock txtDate;
+
 
     private final int REQ_CODE_SPEECH_INPUT = 100;
 
@@ -43,7 +55,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Init() {
+        //Set fonts
+        typeFace = Typeface.createFromAsset(getAssets(),"fonts/KozGoPr6N-Heavy.otf");
 
+        //Clock Set fonts for clock
+        txtClock = (TextClock) findViewById(R.id.textClock);
+        txtClock.setTypeface(typeFace);
+        //Date Set fonts for clock
+        txtDate = (TextClock) findViewById(R.id.textDate);
+        txtDate.setTypeface(typeFace);
         //Setting up schedule on click
         scheduleButton = (ImageButton) findViewById(R.id.ScheduleButton);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         helloText = (TextView) findViewById(R.id.Hello);
+
 
         speechButton = (ImageButton) findViewById(R.id.MicButton);
 
