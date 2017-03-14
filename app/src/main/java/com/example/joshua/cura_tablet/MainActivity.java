@@ -40,6 +40,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     ImageButton scheduleButton;
+    ImageButton nextTaskButton;
     ImageButton identifyButton;
 
     TextView helloText;
@@ -129,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
         txtDate = (TextClock) findViewById(R.id.textDate);
         txtDate.setTypeface(typeFace);
         //Setting up schedule on click
-        scheduleButton = (ImageButton) findViewById(R.id.ScheduleButton);
-        scheduleButton.setOnClickListener(new View.OnClickListener() {
+        nextTaskButton = (ImageButton) findViewById(R.id.btn_invisible);
+        nextTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Schedule();
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Setting up identify on click
-        identifyButton = (ImageButton) findViewById(R.id.FamilyButton);
+        identifyButton = (ImageButton) findViewById(R.id.btn_invisible2);
         identifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
