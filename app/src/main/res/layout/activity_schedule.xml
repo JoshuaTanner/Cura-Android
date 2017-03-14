@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingTop="-5dp">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="214dp"
+        android:background="@drawable/bg_strip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/menubtn_home"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/btn_menu_home"
+            android:layout_above="@+id/menubtn_cura"
+            android:layout_alignLeft="@+id/menubtn_schedule"
+            android:layout_alignStart="@+id/menubtn_schedule" />
+
+        <ImageButton
+            android:id="@+id/menubtn_cura"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/btn_menu_cura"
+            android:layout_above="@+id/menubtn_schedule"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:id="@+id/menubtn_schedule"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/btn_menu_family"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextClock
+            android:id="@+id/txtClock_menuDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:format12Hour="dd/MMM/yyyy"
+            android:format24Hour="dd/MMM/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_font_DarkGrey"
+            android:textSize="35sp"
+            android:timeZone="NZ" />
+
+        <TextClock
+            android:id="@+id/txtClock_menuTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_font_DarkGrey"
+            android:textSize="80sp"
+            android:timeZone="NZ"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</RelativeLayout>
