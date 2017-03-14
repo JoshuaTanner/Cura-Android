@@ -22,7 +22,7 @@ import java.util.Locale;
 public class Family extends AppCompatActivity {
 
     ImageButton scheduleButton;
-    ImageButton curaButton;
+    ImageButton curaButton_family;
     ImageButton homeButton;
 
     TextClock txtClock_menu;
@@ -46,10 +46,10 @@ public class Family extends AppCompatActivity {
         //Set fonts
         Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/KozGoPr6N-Heavy.otf");
         //Clock Set fonts for clock
-        txtClock_menu = (TextClock) findViewById(R.id.txtClock_menuTime1);
+        txtClock_menu = (TextClock) findViewById(R.id.txtClock_menuTime);
         txtClock_menu.setTypeface(typeFace);
         //Date Set fonts for clock
-        textDate_menu = (TextClock) findViewById(R.id.txtClock_menuDate1);
+        textDate_menu = (TextClock) findViewById(R.id.txtClock_menuDate);
         textDate_menu.setTypeface(typeFace);
         //setup button
 
@@ -72,9 +72,9 @@ public class Family extends AppCompatActivity {
         //For speech functionallity
         helloText = (TextView) findViewById(R.id.HelloText);
 
-        curaButton = (ImageButton) findViewById(R.id.menubtn_cura);
+        curaButton_family = (ImageButton) findViewById(R.id.menubtn_cura);
 
-        curaButton.setOnClickListener(new View.OnClickListener(){
+        curaButton_family.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 promptSpeechInput();

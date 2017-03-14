@@ -27,63 +27,63 @@ android:paddingTop="-5dp">
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
 
-    <ImageButton
-        android:id="@+id/menubtn_home"
-        android:background="@android:color/transparent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_menu_home"
-        android:layout_above="@+id/menubtn_cura"
-        android:layout_alignLeft="@+id/menubtn_schedule"
-        android:layout_alignStart="@+id/menubtn_schedule" />
+        <ImageButton
+            android:id="@+id/menubtn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_home"
+            android:layout_below="@+id/txtClock_menuTime"
+            android:layout_alignLeft="@+id/menubtn_schedule"
+            android:layout_alignStart="@+id/menubtn_schedule" />
 
-    <ImageButton
-        android:id="@+id/menubtn_cura"
-        android:background="@android:color/transparent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btn_menu_cura"
-        android:layout_above="@+id/menubtn_schedule"
-        android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:id="@+id/menubtn_cura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_cura"
+            android:layout_below="@+id/menubtn_home"
+            android:layout_centerHorizontal="true" />
 
-    <ImageButton
-        android:id="@+id/menubtn_schedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/btn_menu_schedule" />
+        <ImageButton
+            android:id="@+id/menubtn_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_schedule"
+            android:layout_below="@+id/menubtn_cura"
+            android:layout_centerHorizontal="true" />
 
-    <TextClock
-        android:id="@+id/txtClock_menuDate1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:format12Hour="dd/MMM/yyyy"
-        android:format24Hour="dd/MMM/yyyy"
-        android:textAlignment="center"
-        android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="35sp"
-        android:timeZone="NZ" />
+        <TextClock
+            android:id="@+id/txtClock_menuDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:format12Hour="dd/MMM/yyyy"
+            android:format24Hour="dd/MMM/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_font_DarkGrey"
+            android:textSize="30sp"
+            android:timeZone="NZ" />
 
-    <TextClock
-        android:id="@+id/txtClock_menuTime1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <TextClock
+            android:id="@+id/txtClock_menuTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:format12Hour="HH:mm"
-        android:format24Hour="HH:mm"
-        android:textAlignment="center"
-        android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="80sp"
-        android:timeZone="NZ" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_font_DarkGrey"
+            android:textSize="70sp"
+            android:timeZone="NZ" />
 
 </RelativeLayout>
 

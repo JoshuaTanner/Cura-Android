@@ -7,6 +7,26 @@
     android:background="@drawable/background"
     android:paddingTop="-5dp">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/relativeLayout"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:text="TextView"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/HelloText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="TextView"
+        android:visibility="invisible" />
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="214dp"
@@ -16,35 +36,35 @@
         android:layout_alignParentStart="true">
 
         <ImageButton
-            android:id="@+id/menubtn_home"
+            android:id="@+id/menubtn_home1"
             android:background="@android:color/transparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/btn_menu_home"
-            android:layout_above="@+id/menubtn_cura"
-            android:layout_alignLeft="@+id/menubtn_schedule"
-            android:layout_alignStart="@+id/menubtn_schedule" />
+            android:layout_below="@+id/txtClock_menuTime1"
+            android:layout_alignLeft="@+id/menubtn_family1"
+            android:layout_alignStart="@+id/menubtn_family1" />
 
         <ImageButton
-            android:id="@+id/menubtn_cura"
+            android:id="@+id/menubtn_cura1"
             android:background="@android:color/transparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/btn_menu_cura"
-            android:layout_above="@+id/menubtn_schedule"
+            android:layout_below="@+id/menubtn_home1"
             android:layout_centerHorizontal="true" />
 
         <ImageButton
-            android:id="@+id/menubtn_schedule"
-            android:background="@android:color/transparent"
+            android:id="@+id/menubtn_family1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/btn_menu_family"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/menubtn_cura1"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_family" />
 
         <TextClock
-            android:id="@+id/txtClock_menuDate"
+            android:id="@+id/txtClock_menuDate1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -56,22 +76,37 @@
             android:format24Hour="dd/MMM/yyyy"
             android:textAlignment="center"
             android:textColor="@color/Cura_font_DarkGrey"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:timeZone="NZ" />
 
         <TextClock
-            android:id="@+id/txtClock_menuTime"
+            android:id="@+id/txtClock_menuTime1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:format12Hour="HH:mm"
             android:format24Hour="HH:mm"
             android:textAlignment="center"
             android:textColor="@color/Cura_font_DarkGrey"
-            android:textSize="80sp"
-            android:timeZone="NZ"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:textSize="70sp"
+            android:timeZone="NZ" />
+
     </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/relativeLayout">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/schdulescroll" />
+    </ScrollView>
 
 </RelativeLayout>
