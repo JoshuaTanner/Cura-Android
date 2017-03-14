@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/cura_button1"
         android:elevation="0dp"
         style="@android:style/Widget.ImageButton"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/Hello"
         android:layout_centerHorizontal="true" />
 
     <ImageButton
@@ -30,11 +30,9 @@
         android:background="@android:color/transparent"
         android:id="@+id/ScheduleButton"
         style="@android:style/Widget.ImageButton"
-        android:layout_marginRight="27dp"
-        android:layout_marginEnd="27dp"
         android:layout_alignTop="@+id/FamilyButton"
-        android:layout_toLeftOf="@+id/textClock"
-        android:layout_toStartOf="@+id/textClock" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -43,12 +41,9 @@
         android:background="@android:color/transparent"
         android:id="@+id/FamilyButton"
         style="@android:style/Widget.ImageButton"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="51dp"
-        android:layout_above="@+id/textDate"
-        android:layout_toRightOf="@+id/textClock"
-        android:layout_toEndOf="@+id/textClock" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/Hello"
@@ -62,15 +57,15 @@
         android:id="@+id/textClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
         android:format12Hour="HH:mm"
         android:format24Hour="HH:mm"
         android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="160sp"
+        android:textSize="130sp"
         android:textStyle="bold"
-        android:visibility="visible"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:visibility="visible" />
 
     <TextClock
         android:id="@+id/textDate"
@@ -80,12 +75,27 @@
         android:format24Hour="dd/MMM/yyyy"
         android:textAlignment="center"
         android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="60sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textClock"
-        android:layout_alignStart="@+id/textClock"
-        android:layout_alignRight="@+id/textClock"
-        android:layout_alignEnd="@+id/textClock" />
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/btn_invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/invisible_button"
+        android:layout_above="@+id/ScheduleButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/btn_invisible2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/invisible_button"
+        android:layout_above="@+id/FamilyButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
