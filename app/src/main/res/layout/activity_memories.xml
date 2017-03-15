@@ -14,10 +14,26 @@ android:paddingTop="-5dp">
         android:id="@+id/HelloText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/relativeLayout" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:background="@drawable/bg_topbar"
+        android:textAlignment="center"
+        android:textColor="@color/Cura_font_DarkGrey"
+        android:textSize="40sp"
+        android:layout_below="@+id/HelloText2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/relativeLayout" />
 
     <RelativeLayout
     android:id="@+id/relativeLayout"
@@ -90,16 +106,30 @@ android:paddingTop="-5dp">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/relativeLayout"
         android:layout_toRightOf="@+id/relativeLayout"
-        android:layout_toEndOf="@+id/relativeLayout">
+        android:id="@+id/scrollView2">
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/familyscroll" />
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/arrow_left"
+        android:layout_below="@+id/HelloText2"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:layout_alignBottom="@+id/textView3" />
 
 
 </RelativeLayout>

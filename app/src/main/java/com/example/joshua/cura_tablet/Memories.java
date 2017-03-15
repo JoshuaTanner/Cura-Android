@@ -16,6 +16,8 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -29,7 +31,7 @@ public class Memories extends AppCompatActivity {
     TextClock textDate_menu;
 
     TextView helloText;
-
+    TextView datesText;
 
     TextToSpeech TTS;
     private final int REQ_CODE_SPEECH_INPUT = 100;
@@ -52,8 +54,11 @@ public class Memories extends AppCompatActivity {
         //Date Set fonts for clock
         textDate_menu = (TextClock) findViewById(R.id.txtClock_menuDate2);
         textDate_menu.setTypeface(typeFace);
-        //setup button
 
+        datesText = (TextView) findViewById(R.id.textView3);
+        datesText.setText("James Tanner (Son)");
+        datesText.setTypeface(typeFace);
+        //setup button
         scheduleButton1 = (ImageButton) findViewById(R.id.menubtn_schedule2);
         scheduleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
