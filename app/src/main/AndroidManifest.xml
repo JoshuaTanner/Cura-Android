@@ -25,13 +25,9 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".Memories"
-            android:label="@string/title_activity_memories"
-            android:screenOrientation="landscape"
-            android:theme="@style/CuraTheme" />
         <activity android:name=".Schedule" />
-        <activity android:name=".Family"></activity>
+        <activity android:name=".Family" />
+        <activity android:name=".Memories"></activity>
     </application>
 
 </manifest>

@@ -1,52 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.joshua.cura_tablet.Memories">
 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.example.joshua.cura_tablet.Memories"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/background"
+android:paddingTop="-5dp">
 
-
-
-    <include layout="@layout/content_memories"
-        android:layout_height="518dp" />
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
+    <TextView
+        android:id="@+id/HelloText2"
         android:layout_width="match_parent"
-        android:layout_height="149dp"
-        android:fitsSystemWindows="true"
-        android:theme="@style/CuraTheme.AppBarOverlay">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="TextView"
+        android:visibility="invisible" />
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+    <RelativeLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="214dp"
+    android:background="@drawable/bg_strip"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="wrap_content"
-                android:layout_height="147dp"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/CuraTheme.PopupOverlay"
-                android:elevation="0dp" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
+        <ImageButton
+            android:id="@+id/menubtn_home2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            app:layout_anchor="@id/app_bar"
-            app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@android:drawable/ic_dialog_email" />
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_home"
+            android:layout_above="@+id/menubtn_cura2"
+            android:layout_alignLeft="@+id/menubtn_schedule2"
+            android:layout_alignStart="@+id/menubtn_schedule2" />
 
-    </android.support.design.widget.AppBarLayout>
+        <ImageButton
+            android:id="@+id/menubtn_cura2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_cura"
+            android:layout_above="@+id/menubtn_schedule2"
+            android:layout_centerHorizontal="true" />
 
-</android.support.design.widget.CoordinatorLayout>
+        <ImageButton
+            android:id="@+id/menubtn_schedule2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_menu_schedule"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextClock
+            android:id="@+id/txtClock_menuDate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:format12Hour="dd/MMM/yyyy"
+            android:format24Hour="dd/MMM/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_font_DarkGrey"
+            android:textSize="30sp"
+            android:timeZone="NZ" />
+
+        <TextClock
+            android:id="@+id/txtClock_menuTime2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_font_DarkGrey"
+            android:textSize="70sp"
+            android:timeZone="NZ" />
+
+</RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/relativeLayout">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/familyscroll" />
+    </ScrollView>
+
+
+</RelativeLayout>
