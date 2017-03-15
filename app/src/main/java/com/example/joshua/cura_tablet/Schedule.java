@@ -70,7 +70,7 @@ public class Schedule extends AppCompatActivity {
         });
 
         //For speech functionallity
-        helloText = (TextView) findViewById(R.id.HelloText);
+        helloText = (TextView) findViewById(R.id.HelloText1);
 
         curaButton = (ImageButton) findViewById(R.id.menubtn_cura1);
 

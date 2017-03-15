@@ -84,7 +84,7 @@ public class Memories extends AppCompatActivity {
         });
 
         //For speech functionallity
-        helloText = (TextView) findViewById(R.id.HelloText);
+        helloText = (TextView) findViewById(R.id.HelloText2);
 
         curaButton_family1 = (ImageButton) findViewById(R.id.menubtn_cura2);
 

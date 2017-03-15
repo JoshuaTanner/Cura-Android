@@ -28,7 +28,7 @@ public class Family extends AppCompatActivity {
     TextClock txtClock_menu;
     TextClock textDate_menu;
 
-    TextView helloText;
+    TextView helloText_family;
 
 
     TextToSpeech TTS;
@@ -70,7 +70,7 @@ public class Family extends AppCompatActivity {
         });
 
         //For speech functionallity
-        helloText = (TextView) findViewById(R.id.HelloText);
+        helloText_family = (TextView) findViewById(R.id.HelloText);
 
         curaButton_family = (ImageButton) findViewById(R.id.menubtn_cura);
 
@@ -129,15 +129,15 @@ public class Family extends AppCompatActivity {
 
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    helloText.setText(result.get(0));
+                    helloText_family.setText(result.get(0));
 
-                    Log.i("LOG", helloText.toString());
+                    Log.i("LOG", helloText_family.toString());
 
-                    if(helloText.getText().equals("who is my son"))
+                    if(helloText_family.getText().equals("who is my son"))
                     {
                         Identify();
                     }
-                    else if(helloText.getText().equals("what is next"))
+                    else if(helloText_family.getText().equals("what is next"))
                     {
                         NextTask();
                     }

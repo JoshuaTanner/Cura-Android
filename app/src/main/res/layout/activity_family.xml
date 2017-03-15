@@ -33,7 +33,7 @@ android:paddingTop="-5dp">
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/btn_menu_home"
-            android:layout_below="@+id/txtClock_menuTime"
+            android:layout_above="@+id/menubtn_cura"
             android:layout_alignLeft="@+id/menubtn_schedule"
             android:layout_alignStart="@+id/menubtn_schedule" />
 
@@ -43,7 +43,7 @@ android:paddingTop="-5dp">
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/btn_menu_cura"
-            android:layout_below="@+id/menubtn_home"
+            android:layout_above="@+id/menubtn_schedule"
             android:layout_centerHorizontal="true" />
 
         <ImageButton
@@ -52,7 +52,7 @@ android:paddingTop="-5dp">
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/btn_menu_schedule"
-            android:layout_below="@+id/menubtn_cura"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
         <TextClock
