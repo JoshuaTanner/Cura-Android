@@ -26,6 +26,7 @@ public class Memories extends AppCompatActivity {
     ImageButton scheduleButton1;
     ImageButton curaButton_family1;
     ImageButton homeButton1;
+    ImageButton backButton;
 
     TextClock txtClock_menu;
     TextClock textDate_menu;
@@ -72,6 +73,13 @@ public class Memories extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Home();
+            }
+        });
+        backButton = (ImageButton) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FamilyTree();
             }
         });
 
@@ -225,6 +233,16 @@ public class Memories extends AppCompatActivity {
         Log.i("LOG", "Accessing schedulewindow");
 
         Intent work = new Intent(Memories.this, Schedule.class);
+        //work.putExtra("stopLat", response.getLatitude());
+
+        startActivity(work);
+        finish();
+    }
+
+    public void FamilyTree() {
+        Log.i("LOG", "Accessing family tree");
+
+        Intent work = new Intent(Memories.this, Family.class);
         //work.putExtra("stopLat", response.getLatitude());
 
         startActivity(work);

@@ -120,16 +120,16 @@ android:paddingTop="-5dp">
     </ScrollView>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_below="@+id/HelloText2"
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/arrow_left"
-        android:layout_below="@+id/HelloText2"
         android:layout_toRightOf="@+id/relativeLayout"
-        android:layout_alignBottom="@+id/textView3" />
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/arrow_left" />
 
 
 </RelativeLayout>
