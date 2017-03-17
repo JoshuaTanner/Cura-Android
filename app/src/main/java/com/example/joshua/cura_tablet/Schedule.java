@@ -213,6 +213,8 @@ public class Schedule extends AppCompatActivity {
     public void Identify() {
         Log.i("LOG", "Accessing identify");
 
+        TextToSpeech("James Tanner is your 36 year old son. Here are your memories");
+
         Intent work = new Intent(Schedule.this, Memories.class);
         //work.putExtra("stopLat", response.getLatitude());
 

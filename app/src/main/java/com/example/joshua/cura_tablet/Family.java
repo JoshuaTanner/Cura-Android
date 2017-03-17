@@ -2,6 +2,7 @@ package com.example.joshua.cura_tablet;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
@@ -14,6 +15,11 @@ import android.widget.ImageButton;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -33,6 +39,11 @@ public class Family extends AppCompatActivity {
 
     TextToSpeech TTS;
     private final int REQ_CODE_SPEECH_INPUT = 100;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +52,14 @@ public class Family extends AppCompatActivity {
         layout();
 
         Init();
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
     public void Init() {
         //Set fonts
-        Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/KozGoPr6N-Heavy.otf");
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/KozGoPr6N-Heavy.otf");
         //Clock Set fonts for clock
         txtClock_menu = (TextClock) findViewById(R.id.txtClock_menuTime);
         txtClock_menu.setTypeface(typeFace);
@@ -74,7 +89,7 @@ public class Family extends AppCompatActivity {
 
         curaButton_family = (ImageButton) findViewById(R.id.menubtn_cura);
 
-        curaButton_family.setOnClickListener(new View.OnClickListener(){
+        curaButton_family.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 promptSpeechInput();
@@ -84,7 +99,7 @@ public class Family extends AppCompatActivity {
         TTS = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
-                if(i != TextToSpeech.ERROR){
+                if (i != TextToSpeech.ERROR) {
                     TTS.setLanguage(Locale.UK);
                 }
             }
@@ -94,7 +109,7 @@ public class Family extends AppCompatActivity {
 
     /**
      * Showing google speech input dialog
-     * */
+     */
     private void promptSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -118,7 +133,7 @@ public class Family extends AppCompatActivity {
 
     /**
      * Receiving speech input
-     * */
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -133,16 +148,11 @@ public class Family extends AppCompatActivity {
 
                     Log.i("LOG", helloText_family.toString());
 
-                    if(helloText_family.getText().equals("who is my son"))
-                    {
+                    if (helloText_family.getText().equals("who is my son")) {
                         Identify();
-                    }
-                    else if(helloText_family.getText().equals("what is next"))
-                    {
+                    } else if (helloText_family.getText().equals("what is next")) {
                         NextTask();
-                    }
-                    else
-                    {
+                    } else {
                         TextToSpeech("I don't understand");
                     }
                 }
@@ -152,11 +162,10 @@ public class Family extends AppCompatActivity {
         }
     }
 
-    public void layout()
-    {
+    public void layout() {
         int currentApiVersion;
 
-        currentApiVersion = android.os.Build.VERSION.SDK_INT;
+        currentApiVersion = Build.VERSION.SDK_INT;
 
         final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -166,8 +175,7 @@ public class Family extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
 
         // This work only for android 4.4+
-        if(currentApiVersion >= Build.VERSION_CODES.KITKAT)
-        {
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT) {
 
             getWindow().getDecorView().setSystemUiVisibility(flags);
 
@@ -176,14 +184,11 @@ public class Family extends AppCompatActivity {
             // show up and won't hide
             final View decorView = getWindow().getDecorView();
             decorView
-                    .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener()
-                    {
+                    .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
 
                         @Override
-                        public void onSystemUiVisibilityChange(int visibility)
-                        {
-                            if((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0)
-                            {
+                        public void onSystemUiVisibilityChange(int visibility) {
+                            if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
                                 decorView.setSystemUiVisibility(flags);
                             }
                         }
@@ -192,8 +197,8 @@ public class Family extends AppCompatActivity {
 
     }
 
-    public void TextToSpeech(String toSpeak){
-        Toast.makeText(getApplicationContext(),toSpeak,Toast.LENGTH_SHORT).show();
+    public void TextToSpeech(String toSpeak) {
+        Toast.makeText(getApplicationContext(), toSpeak, Toast.LENGTH_SHORT).show();
         TTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
     }
 
@@ -204,9 +209,10 @@ public class Family extends AppCompatActivity {
     }
 
 
-
     public void Identify() {
         Log.i("LOG", "Accessing identify");
+
+        TextToSpeech("James Tanner is your 36 year old son. Here are your memories");
 
         Intent work = new Intent(Family.this, Memories.class);
         //work.putExtra("stopLat", response.getLatitude());
@@ -233,6 +239,42 @@ public class Family extends AppCompatActivity {
 
         startActivity(work);
         finish();
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("Family Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
     }
 }
 
