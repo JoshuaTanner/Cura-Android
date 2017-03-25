@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton familyButton;
     ImageButton nextTaskButton;
     ImageButton identifyButton;
+    ImageButton notifyButton;
 
     TextView helloText;
 
@@ -143,6 +144,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        notifyButton = (ImageButton) findViewById(R.id.btn_Invisible3);
+        notifyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Notify();
+            }
+        });
+
+
         helloText = (TextView) findViewById(R.id.Hello);
 
 
@@ -247,6 +257,19 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(work);
         finish();
+    }
+
+    public void Notify() {
+        Log.i("LOG", "Accessing notify");
+
+        TextToSpeech("Lunch is starting at 11:45 am");
+        Intent work = new Intent(MainActivity.this, Notification.class);
+        //work.putExtra("stopLat", response.getLatitude());
+
+        startActivity(work);
+        finish();
+
+
     }
 
     public void Schedule() {

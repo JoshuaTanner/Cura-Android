@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.joshua.cura_tablet.Notification"
+android:background="@drawable/background"
+android:paddingTop="-5dp">
+
+    <TextView
+        android:id="@+id/HelloText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/relativeLayout"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/taskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HelloText3"
+        android:background="@drawable/bg_topbar"
+        android:text="Today"
+        android:textAlignment="center"
+        android:textColor="@color/Cura_font_DarkGrey"
+        android:textSize="50sp" />
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/taskName"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/arrow_left"
+        android:layout_below="@+id/HelloText3" />
+
+    <TextView
+        android:id="@+id/taskDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/taskName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:text="TextView"
+        android:textColor="@color/colorPrimary"
+        android:textSize="45sp" />
+
+    <TextView
+        android:id="@+id/taskWhere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where :"
+        android:textColor="@color/Cura_font_DarkGrey"
+        android:textSize="36sp"
+        android:layout_above="@+id/taskWhen"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/taskWhen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="When :"
+        android:textColor="@color/Cura_font_DarkGrey"
+        android:textSize="36sp"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/btn_Confirm"
+        android:layout_alignLeft="@+id/taskWhere"
+        android:layout_alignStart="@+id/taskWhere" />
+
+    <ImageButton
+        android:id="@+id/btn_Confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/confirm"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
