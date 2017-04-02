@@ -26,7 +26,7 @@ public class Memories extends AppCompatActivity {
     ImageButton scheduleButton1;
     ImageButton curaButton_family1;
     ImageButton homeButton1;
-    ImageButton backButton;
+    ImageButton menuBtn_familybtn;
 
     TextClock txtClock_menu;
     TextClock textDate_menu;
@@ -56,17 +56,6 @@ public class Memories extends AppCompatActivity {
         textDate_menu = (TextClock) findViewById(R.id.txtClock_menuDate2);
         textDate_menu.setTypeface(typeFace);
 
-        datesText = (TextView) findViewById(R.id.textView3);
-        datesText.setText("James Tanner (Son)");
-        datesText.setTypeface(typeFace);
-        //setup button
-        scheduleButton1 = (ImageButton) findViewById(R.id.menubtn_schedule2);
-        scheduleButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Schedule();
-            }
-        });
 
         homeButton1 = (ImageButton) findViewById(R.id.menubtn_home2);
         homeButton1.setOnClickListener(new View.OnClickListener() {
@@ -75,19 +64,19 @@ public class Memories extends AppCompatActivity {
                 Home();
             }
         });
-        backButton = (ImageButton) findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
+
+        //For speech functionallity
+        helloText = (TextView) findViewById(R.id.HelloText2);
+
+        menuBtn_familybtn = (ImageButton) findViewById(R.id.menubtn_family2);
+        menuBtn_familybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FamilyTree();
             }
         });
 
-        //For speech functionallity
-        helloText = (TextView) findViewById(R.id.HelloText2);
-
         curaButton_family1 = (ImageButton) findViewById(R.id.menubtn_cura2);
-
         curaButton_family1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

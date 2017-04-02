@@ -52,7 +52,7 @@ android:paddingTop="-5dp">
         android:layout_below="@+id/taskName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
-        android:text="TextView"
+        android:text="Please head down to dining room"
         android:textColor="@color/colorPrimary"
         android:textSize="45sp" />
 

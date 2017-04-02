@@ -273,9 +273,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Schedule() {
-        Log.i("LOG", "Accessing schedulewindow");
+        Log.i("LOG", "Accessing schedule window");
 
-        Intent work = new Intent(MainActivity.this, Schedule.class);
+        TextToSpeech("You are currently viewing Schedule");
+
+        Intent work = new Intent(MainActivity.this, MainActivity.class);
         //work.putExtra("stopLat", response.getLatitude());
 
         startActivity(work);

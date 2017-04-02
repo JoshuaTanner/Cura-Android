@@ -1,135 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-tools:context="com.example.joshua.cura_tablet.Memories"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/background"
-android:paddingTop="-5dp">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.joshua.cura_tablet.Memories"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingTop="-5dp">
+
+    <ImageButton
+        android:id="@+id/btn_invisible"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/relativeLayout2"
+        android:layout_toRightOf="@+id/relativeLayout2"
+        android:background="@color/cura_lightblue"
+        app:srcCompat="@drawable/logo_bar" />
 
     <TextView
         android:id="@+id/HelloText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:visibility="invisible"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/relativeLayout"
-        android:layout_toEndOf="@+id/relativeLayout" />
-
-    <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:background="@drawable/bg_topbar"
-        android:textAlignment="center"
-        android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="40sp"
-        android:layout_below="@+id/HelloText2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/relativeLayout"
-        android:layout_toEndOf="@+id/relativeLayout" />
+        android:text="Say hello Cura!"
+        android:layout_below="@+id/btn_invisible"
+        android:layout_toRightOf="@+id/relativeLayout2"
+        android:layout_toEndOf="@+id/relativeLayout2" />
+
 
     <RelativeLayout
-    android:id="@+id/relativeLayout"
-    android:layout_width="214dp"
-    android:background="@drawable/bg_strip"
-    android:layout_height="match_parent"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true">
+        android:id="@+id/relativeLayout2"
+        android:layout_width="110pt"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidebar_bg"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageButton
-            android:id="@+id/menubtn_home2"
+            android:id="@+id/btn_invisible2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="170dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/btn_menu_home"
-            android:layout_above="@+id/menubtn_cura2"
-            android:layout_alignLeft="@+id/menubtn_schedule2"
-            android:layout_alignStart="@+id/menubtn_schedule2" />
+            app:srcCompat="@drawable/patient" />
 
-        <ImageButton
-            android:id="@+id/menubtn_cura2"
+        <TextClock
+            android:id="@+id/txtClock_menuTime2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/btn_menu_cura"
-            android:layout_above="@+id/menubtn_schedule2"
-            android:layout_centerHorizontal="true" />
-
-        <ImageButton
-            android:id="@+id/menubtn_schedule2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/btn_menu_schedule"
-            android:layout_alignParentBottom="true"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:layout_marginTop="-22dp"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_NavyBlue"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:timeZone="NZ"
+            android:visibility="visible"
             android:layout_centerHorizontal="true" />
 
         <TextClock
             android:id="@+id/txtClock_menuDate2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:format12Hour="dd/MMM/yyyy"
             android:format24Hour="dd/MMM/yyyy"
             android:textAlignment="center"
-            android:textColor="@color/Cura_font_DarkGrey"
-            android:textSize="30sp"
-            android:timeZone="NZ" />
+            android:textColor="@color/Cura_NavyBlue"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:timeZone="NZ"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="75dp"/>
 
-        <TextClock
-            android:id="@+id/txtClock_menuTime2"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:srcCompat="@drawable/borderline"
+            android:layout_above="@+id/MicButton"
 
-            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:id="@+id/menubtn_cura2"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageView5"
+            android:layout_alignLeft="@+id/menubtn_home2"
+            android:layout_alignStart="@+id/menubtn_home2"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            app:srcCompat="@drawable/cura_button1" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/menubtn_home2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/borderline"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            />
+
+        <ImageButton
+            android:id="@+id/menubtn_home2"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageView4"
             android:layout_centerHorizontal="true"
-            android:format12Hour="HH:mm"
-            android:format24Hour="HH:mm"
-            android:textAlignment="center"
-            android:textColor="@color/Cura_font_DarkGrey"
-            android:textSize="70sp"
-            android:timeZone="NZ" />
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/schedule_button1"
+            />
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/menubtn_family2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/borderline"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"        />
 
+        <ImageButton
+            android:id="@+id/menubtn_family2"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/family_button1"
+            android:paddingBottom="15dp"/>
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/relativeLayout"
-        android:layout_toRightOf="@+id/relativeLayout"
-        android:id="@+id/scrollView2">
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/relativeLayout2"
+        android:layout_toEndOf="@+id/relativeLayout2"
+        android:id="@+id/scrollView4"
+        android:layout_below="@+id/HelloText2">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.93"
             app:srcCompat="@drawable/familyscroll" />
+
     </ScrollView>
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_below="@+id/HelloText2"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_toRightOf="@+id/relativeLayout"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/arrow_left" />
-
-
 </RelativeLayout>
+
+

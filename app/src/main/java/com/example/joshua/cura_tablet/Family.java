@@ -27,7 +27,7 @@ import java.util.Locale;
 
 public class Family extends AppCompatActivity {
 
-    ImageButton scheduleButton;
+
     ImageButton curaButton_family;
     ImageButton homeButton;
 
@@ -67,14 +67,6 @@ public class Family extends AppCompatActivity {
         textDate_menu = (TextClock) findViewById(R.id.txtClock_menuDate);
         textDate_menu.setTypeface(typeFace);
         //setup button
-
-        scheduleButton = (ImageButton) findViewById(R.id.menubtn_schedule);
-        scheduleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Schedule();
-            }
-        });
 
         homeButton = (ImageButton) findViewById(R.id.menubtn_home);
         homeButton.setOnClickListener(new View.OnClickListener() {
