@@ -5,4 +5,5 @@
     <color name="colorAccent">#ff5aba</color>
     <color name="Cura_font_DarkGrey">#363636</color>
     <color name="Cura_NavyBlue">#122361</color>
+    <color name="cura_lightblue">#0bc3df</color>
 </resources>
