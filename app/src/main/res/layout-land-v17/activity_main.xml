@@ -36,11 +36,9 @@
         android:id="@+id/btn_Invisible3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="12dp"
+        android:layout_marginLeft="-100dp"
         android:layout_below="@+id/btn_invisible"
-        android:layout_toEndOf="@+id/relativeLayout2"
         android:layout_toRightOf="@+id/relativeLayout2"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/month_weekday_bar" />
@@ -50,13 +48,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_Invisible3"
-        android:layout_toEndOf="@+id/imageButton2"
-        android:layout_toRightOf="@+id/imageButton2"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="10dp"
-        android:text="TextView"
+        android:layout_toEndOf="@+id/imageButton2"
+        android:layout_toRightOf="@+id/imageButton2"
+        android:text="Friday, 31 March 2017"
         android:textAlignment="center"
         android:textColor="@color/Cura_font_DarkGrey"
         android:textSize="18sp" />
@@ -84,12 +82,13 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
-        android:layout_width="130pt"
+        android:layout_width="110pt"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/textClock"
         android:background="@drawable/sidebar_bg"
-        android:paddingBottom="15dp">
+        android:paddingBottom="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageButton
             android:id="@+id/btn_invisible2"
@@ -97,27 +96,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="122dp"
+            android:layout_marginTop="170dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/patient" />
-
-        <TextClock
-            android:id="@+id/textDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="75dp"
-            android:format12Hour="dd/MMM/yyyy"
-            android:format24Hour="dd/MMM/yyyy"
-            android:textAlignment="center"
-            android:textColor="@color/Cura_NavyBlue"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:timeZone="NZ" />
 
         <TextClock
             android:id="@+id/textClock"
@@ -125,26 +106,50 @@
             android:layout_height="wrap_content"
             android:format12Hour="HH:mm"
             android:format24Hour="HH:mm"
+            android:layout_marginTop="-22dp"
             android:textAlignment="center"
             android:textColor="@color/Cura_NavyBlue"
             android:textSize="70sp"
             android:textStyle="bold"
             android:timeZone="NZ"
             android:visibility="visible"
-            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextClock
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="dd/MMM/yyyy"
+            android:format24Hour="dd/MMM/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_NavyBlue"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:timeZone="NZ"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginTop="75dp"/>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:srcCompat="@drawable/borderline"
+            android:layout_above="@+id/MicButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MicButton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/borderline" />
+            android:background="@drawable/highlight"
+            android:layout_marginTop="9dp" />
 
         <ImageButton
             android:id="@+id/MicButton"
@@ -205,7 +210,8 @@
         android:layout_toRightOf="@+id/relativeLayout2"
         android:layout_marginTop="12dp"
 
-        android:layout_toEndOf="@+id/relativeLayout2">
+        android:layout_toEndOf="@+id/relativeLayout2"
+        android:id="@+id/scrollView4">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -215,5 +221,15 @@
                 app:srcCompat="@drawable/schdulescroll" />
 
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        app:srcCompat="@drawable/txt_today"
+        android:layout_alignTop="@+id/btn_Invisible3"
+        android:layout_alignRight="@+id/btn_Invisible3"
+        android:layout_alignEnd="@+id/btn_Invisible3" />
 
 </RelativeLayout>
