@@ -58,7 +58,7 @@ public class Notification extends AppCompatActivity {
 
         taskTitle.setText("Lunch");
         taskContent.setText("Go to dining room");
-        taskWhere.setText("Where : Diningroom, Nikau, LadyAllum");
+        taskWhere.setText("Where : Dining room, Nikau, Lady Allum");
         taskWhen.setText(" When : 11:45 am");
 
 

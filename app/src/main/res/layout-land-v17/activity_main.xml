@@ -4,46 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="fill_parent" 
-    android:layout_height="fill_parent" 
+    android:layout_height="fill_parent"
+
     android:background="@drawable/bg_home"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.joshua.cura_tablet.MainActivity">
-
-    <ImageButton
-        android:id="@+id/MicButton"
-        android:background="@android:color/transparent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/cura_button1"
-        android:elevation="0dp"
-        style="@android:style/Widget.ImageButton"
-        android:layout_below="@+id/Hello"
-        android:layout_centerHorizontal="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/schedule_button1"
-        android:background="@android:color/transparent"
-        android:id="@+id/ScheduleButton"
-        style="@android:style/Widget.ImageButton"
-        android:layout_alignTop="@+id/FamilyButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/family_button1"
-        android:background="@android:color/transparent"
-        android:id="@+id/FamilyButton"
-        style="@android:style/Widget.ImageButton"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/Hello"
@@ -52,55 +16,6 @@
         android:text="Say hello Cura!"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <TextClock
-        android:id="@+id/textClock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
-        android:format12Hour="HH:mm"
-        android:format24Hour="HH:mm"
-        android:timeZone="NZ"
-        android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="130sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
-
-    <TextClock
-        android:id="@+id/textDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:format12Hour="dd/MMM/yyyy"
-        android:format24Hour="dd/MMM/yyyy"
-        android:timeZone="NZ"
-        android:textAlignment="center"
-        android:textColor="@color/Cura_font_DarkGrey"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <ImageButton
-        android:id="@+id/btn_invisible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/invisible_button"
-        android:layout_above="@+id/ScheduleButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/transparent" />
-
-    <ImageButton
-        android:id="@+id/btn_invisible2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/invisible_button"
-        android:layout_above="@+id/FamilyButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@android:color/transparent" />
 
     <ImageButton
         android:id="@+id/btn_Invisible3"
@@ -111,5 +26,138 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/btn_invisible"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/Logo_bar"
+        android:layout_below="@+id/Hello"
+        android:layout_alignRight="@+id/Hello"
+        android:layout_alignEnd="@+id/Hello"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/textClock"
+        android:background="@drawable/sidebar_bg"
+        android:layout_alignRight="@+id/btn_Invisible3"
+        android:layout_alignEnd="@+id/btn_Invisible3"
+        android:id="@+id/relativeLayout2"
+        android:paddingBottom="15dp"
+        >
+
+        <ImageButton
+            android:id="@+id/btn_invisible2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/patient"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="122dp" />
+
+        <TextClock
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="dd/MMM/yyyy"
+            android:format24Hour="dd/MMM/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_NavyBlue"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:timeZone="NZ"
+            android:layout_marginTop="75dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:textAlignment="center"
+            android:textColor="@color/Cura_NavyBlue"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:timeZone="NZ"
+            android:visibility="visible"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/BorderLine"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:id="@+id/MicButton"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            app:srcCompat="@drawable/cura_button1"
+            android:layout_above="@+id/imageView5"
+            android:layout_alignLeft="@+id/ScheduleButton"
+            android:layout_alignStart="@+id/ScheduleButton" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ScheduleButton"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/BorderLine" />
+
+        <ImageButton
+            android:id="@+id/ScheduleButton"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/schedule_button1"
+            android:layout_above="@+id/imageView4"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/FamilyButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/BorderLine" />
+
+        <ImageButton
+            android:id="@+id/FamilyButton"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/family_button1"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
