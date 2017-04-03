@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         Init();
 
     }
+
+
     public void layout()
     {
         int currentApiVersion;
