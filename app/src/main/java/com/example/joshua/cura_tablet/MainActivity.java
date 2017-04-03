@@ -219,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.i("LOG", helloText.toString());
 
+
                     if(helloText.getText().equals("who is my son"))
                     {
                         Identify();
@@ -229,7 +230,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        TextToSpeech("I don't understand");
+                        //extToSpeech("I don't understand");
+                        Identify();
                     }
                 }
                 break;
