@@ -114,14 +114,7 @@ public class MainActivity extends AppCompatActivity {
         //Date Set fonts for clock
         txtDate = (TextClock) findViewById(R.id.textDate);
         txtDate.setTypeface(typeFace);
-        //Setting up schedule on click
-        nextTaskButton = (ImageButton) findViewById(R.id.btn_invisible);
-        nextTaskButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NextTask();
-            }
-        });
+
 
         scheduleButton = (ImageButton) findViewById(R.id.ScheduleButton);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
@@ -137,7 +130,18 @@ public class MainActivity extends AppCompatActivity {
                 FamilyTree();
             }
         });
-        //Setting up identify on click
+
+        /* uncomment this for short cuts
+        //Setting up schedule on click
+        nextTaskButton = (ImageButton) findViewById(R.id.btn_invisible);
+        nextTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NextTask();
+            }
+        });
+
+          //Setting up identify on click
         identifyButton = (ImageButton) findViewById(R.id.btn_invisible2);
         identifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 Notify();
             }
         });
-
+        */
 
         helloText = (TextView) findViewById(R.id.Hello);
 
