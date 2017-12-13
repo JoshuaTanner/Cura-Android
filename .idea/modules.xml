@@ -3,11 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Cura.iml" filepath="$PROJECT_DIR$/Cura.iml" />
-      <module fileurl="file://C:\Users\Joshua\Documents\GitProjects\Cura\Cura-Android.iml" filepath="C:\Users\Joshua\Documents\GitProjects\Cura\Cura-Android.iml" />
-      <module fileurl="file://C:\Users\Joshua\Documents\GitProjects\Cura\CuraApp.iml" filepath="C:\Users\Joshua\Documents\GitProjects\Cura\CuraApp.iml" />
-      <module fileurl="file://C:\Users\Joshua\Documents\GitProjects\Cura\Cura_Android.iml" filepath="C:\Users\Joshua\Documents\GitProjects\Cura\Cura_Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Joshua\Documents\GitProjects\Cura\app\app.iml" filepath="C:\Users\Joshua\Documents\GitProjects\Cura\app\app.iml" />
     </modules>
   </component>
 </project>

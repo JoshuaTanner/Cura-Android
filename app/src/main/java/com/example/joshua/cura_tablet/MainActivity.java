@@ -223,19 +223,23 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.i("LOG", helloText.toString());
 
-
-                    if(helloText.getText().equals("who is my son"))
+                    if(helloText.getText().equals("who is my son")
+                            || helloText.getText().equals("who is james")
+                            || helloText.getText().equals("who is james turner"))
                     {
                         Identify();
                     }
-                    else if(helloText.getText().equals("what is next"))
+                    else if(helloText.getText().equals("what is next")
+                            || helloText.getText().equals("next")
+                            || helloText.getText().equals("what is my next task")
+                            || helloText.getText().equals("what should i do"))
                     {
                         NextTask();
                     }
                     else
                     {
-                        //extToSpeech("I don't understand");
-                        Identify();
+                        TextToSpeech("I don't understand. Try asking who is my son or what " +
+                                "is my next task");
                     }
                 }
                 break;
@@ -258,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
     public void Identify() {
         Log.i("LOG", "Accessing identify");
 
-        TextToSpeech("James Tanner is your 36 year old son. Here are your memories");
+        TextToSpeech("James Turner is your 36 year old son. Here are your memories");
 
         Intent work = new Intent(MainActivity.this, Memories.class);
         //work.putExtra("stopLat", response.getLatitude());
@@ -272,12 +276,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextToSpeech("Lunch is starting at 11:45 am");
         Intent work = new Intent(MainActivity.this, Notification.class);
-        //work.putExtra("stopLat", response.getLatitude());
 
         startActivity(work);
         finish();
-
-
     }
 
     public void Schedule() {
